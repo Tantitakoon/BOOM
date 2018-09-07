@@ -1,0 +1,37 @@
+{
+    "apps": [{
+        "exec_mode": "cluster",
+        "instances": 0,
+        "script": "./dist/index.js",
+        "name": "GL-ASSIST",
+        "interpreter": "./node_modules/.bin/babel-node",
+        "retain": "all",
+		"compress": true,
+		"dateFormat": "YYYY-MM-DD_HH-mm-ss",
+		"workerInterval": 10,
+		"rotateInterval": "*/15 * * * *",
+        "rotateModule": true,
+        "error_file": "/app/GL-ASSIST/pm2_logs/error.log",
+        "out_file": "/app/GL-ASSIST/pm2_logs/out.log",
+        "pid_file": "/app/GL-ASSIST/pm2_logs/pid.log",
+        "env": {
+            "NODE_ENV": "production",
+            "APP_HOST": "0.0.0.0",
+            "APP_PORT": "8443",
+            "USE_HTTPS": true,
+            "SAVE_LOG": true,
+            "LOG_PATH": "/app/GL-ASSIST/logs/",
+            "LOG_ROTATE_TIME": 15,
+            "BASE_API_MYAIS": "http://10.193.40.87:8080/social-adapter-fe",
+            "BASE_API_AISPLAY": "https://aog.ais-vidnt.com/assist/playbot",
+            "BASE_IMG_URL": "http://cpc.ais.co.th/CPC-FE-SERVICE/cpc-api/v1/download/AI_Content",
+            "BASE_URL_LINKING": "http://srf.ais.co.th:8080",
+            "AIS_PLAY_API_KEY": "ais_gwsXavC12Y4zng4yEp0lXwqf2vobHPXYh1DbV0Re",
+            "X_AOG_KEY": "QWlzQEFvZy1ham9pYWRwd2Vpdm5wT2g5U0xrZFZKdzYwSkZjOXBpd2VqdmIycG93bg==",
+            "JWT_OL5_SECRET": "SRFPTOKENKEY",
+            "JWT_SECRET": "bA2xcjpf8y5aSUFsNB2qN5yymUBSs6es3qHoFpGkec75RCeBb8cpKauGefw5qy4",
+            "JWT_EXPIRATION_MINUTES": 15,
+            "JWT_DATA_STORAGE": "bjNsbGlrQGVOQzBkM0RhVEBzdDBSQGdl"
+        }
+    }]
+}
