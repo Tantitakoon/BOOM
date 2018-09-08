@@ -128,8 +128,7 @@ var Intent = exports.Intent = function () {
        let body = req.body;
        console.log(body);
        console.log('Webhook');
-       res.status(200).send('EVENT_RECEIVED');
-
+    
     // Check the webhook event is from a Page subscription
        if (body.object === 'page') {
 
@@ -178,7 +177,7 @@ var Intent = exports.Intent = function () {
                         let sender_psid = webhook_event.sender.id;
                         console.log(`Sender PSID: ${sender_psid}`);
                         console.log("attachments");
-                      
+
 
 /////////////////////////////////////////////////////////////////////////////
                         // Check if the event is a message or postback and
