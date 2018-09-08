@@ -56,8 +56,8 @@ var responseMessenger = exports.responseMessenger = function (_Service) {
                 method: 'POST',
                 json: request_body,
             }, (error, response, body) => {
-                console.log("response : "+response.param);
-                var obj = JSON.parse(response);
+           
+                var obj = JSON.parse(body);
                 console.log(obj);
                 if (!error && response.statusCode === 200) {
                 console.log('Message sent succesfully');
