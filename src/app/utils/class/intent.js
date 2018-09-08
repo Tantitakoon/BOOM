@@ -131,7 +131,7 @@ var Intent = exports.Intent = function () {
        res.status(200).send('EVENT_RECEIVED');
 
     // Check the webhook event is from a Page subscription
-      /* if (body.object === 'page') {
+       if (body.object === 'page') {
 
         // parse messaging array
           const webhook_events = body.entry[0];
@@ -204,7 +204,7 @@ var Intent = exports.Intent = function () {
         } else {
             // Return a '404 Not Found' if event is not from a page subscription
             res.sendStatus(404);
-        }*/
+        }
 
 
       }
