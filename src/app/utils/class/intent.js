@@ -178,8 +178,7 @@ var Intent = exports.Intent = function () {
                         let sender_psid = webhook_event.sender.id;
                         console.log(`Sender PSID: ${sender_psid}`);
                         console.log("attachments");
-                        console.log(webhook_event.message.attachments[0][0]);
-
+                      
 
 /////////////////////////////////////////////////////////////////////////////
                         // Check if the event is a message or postback and
