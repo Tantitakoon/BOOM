@@ -128,7 +128,7 @@ var Intent = exports.Intent = function () {
        let body = req.body;
        console.log(body);
        console.log('Webhook');
-    
+
     // Check the webhook event is from a Page subscription
        if (body.object === 'page') {
 
@@ -163,6 +163,7 @@ var Intent = exports.Intent = function () {
             console.log('webhook_events.messaging');
             // iterate webhook events
             webhook_events.messaging.forEach(event => {
+              console.log("eventBooM : "+event);
               // parse sender PSID and message
               const psid = event.sender.id;
               const message = event.message;
