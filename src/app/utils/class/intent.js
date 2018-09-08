@@ -30,9 +30,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Intent = exports.Intent = function () {
     function Intent(app,INTENT) {
-                        
+
         _classCallCheck(this, Intent);
-         console.log("Intent_start"); 
+         console.log("Intent_start");
 
         this.TEXT = null;
         this.data = null;
@@ -58,15 +58,15 @@ var Intent = exports.Intent = function () {
         //     OfferPackageOntop: null,
         //     RegisterPackgetOntop: null
         // }
-         
+
         //console.log("constants :"+_constants.ENV.APP_ID);
         for (var richName in Rich) {
            this.rich[richName] = {};
          }
          this.callWebhook = this.callWebhook.bind(this);
          this._ = this._.bind(this);
-         this.app.post('/webhook',this.callWebhook);  
-         this.app.get('/webhook',this.callGetWebhook);  
+         this.app.post('/webhook',this.callWebhook);
+         this.app.get('/webhook',this.callGetWebhook);
     }
 
      _createClass(Intent, [{
@@ -74,7 +74,7 @@ var Intent = exports.Intent = function () {
         value: function _(sender_psid,received_message) {
              console.log("this value :"+sender_psid+" received_message : "+received_message);
              this.data = {};
-            
+
              this.data.sender_psid = sender_psid;
              this.data.received_message = received_message;
             //this.params = params;
@@ -86,7 +86,7 @@ var Intent = exports.Intent = function () {
             // for (const serviceName in Service) {
             //     this.service[serviceName] = new Service[serviceName](conv._.storage.msisdn).request
             // }
-       
+
             this.use = this.use.bind(this);
             this.next = this.next.bind(this);
             this.end = this.end.bind(this);
@@ -118,9 +118,9 @@ var Intent = exports.Intent = function () {
                     res.sendStatus(403);
                 }
             }
-            
-  
-      }  
+
+
+      }
     },{
       key:'callWebhook',
       value: function callWebhook(req,res){
@@ -128,9 +128,10 @@ var Intent = exports.Intent = function () {
        let body = req.body;
        console.log(body);
        console.log('Webhook');
+       res.status(200).send('EVENT_RECEIVED');
 
     // Check the webhook event is from a Page subscription
-       if (body.object === 'page') {
+      /* if (body.object === 'page') {
 
         // parse messaging array
           const webhook_events = body.entry[0];
@@ -145,7 +146,7 @@ var Intent = exports.Intent = function () {
                 webhook_events.standby.forEach(event => {
 
                 const psid = event.sender.id;
-                const message = event.message;      
+                const message = event.message;
                 // Gets the body of the webhook event
                             console.log(webhook_events);
                             let webhook_event = message;
@@ -154,15 +155,15 @@ var Intent = exports.Intent = function () {
                             // Get the sender PSID
                             let sender_psid = psid;
                             console.log(`Sender PSID: ${sender_psid}`);
-                });   
+                });
           }
-          else{       
-          // Bot is in control - listen for messages 
-          if (webhook_events.messaging) {             
+          else{
+          // Bot is in control - listen for messages
+          if (webhook_events.messaging) {
 
             console.log('webhook_events.messaging');
             // iterate webhook events
-            webhook_events.messaging.forEach(event => {      
+            webhook_events.messaging.forEach(event => {
               // parse sender PSID and message
               const psid = event.sender.id;
               const message = event.message;
@@ -196,22 +197,22 @@ var Intent = exports.Intent = function () {
             });
           }
         }
-        
+
         // Return a '200 OK' response to all events
         res.status(200).send('EVENT_RECEIVED');
 
         } else {
             // Return a '404 Not Found' if event is not from a page subscription
             res.sendStatus(404);
-        }
-        
-      
-      }  
+        }*/
+
+
+      }
     }, {
         key: 'use',
         value: function use(fn) {
-            
-            
+
+
             this.middlewareStack.push(fn.bind(this));
             return { use: this.use, end: this.end };
         }
