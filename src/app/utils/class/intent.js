@@ -101,6 +101,7 @@ var Intent = exports.Intent = function () {
             // Parse params from the webhook verification request
             let mode = req.query['hub.mode'];
             let token = req.query['hub.verify_token'];
+            console.log("token : "+token);
             let challenge = req.query['hub.challenge'];
 
             // Check if a token and mode were sent
