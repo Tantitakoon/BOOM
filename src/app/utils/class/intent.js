@@ -124,7 +124,7 @@ var Intent = exports.Intent = function () {
     },{
       key:'callWebhook',
       value: function callWebhook(req,res){
-        console.log(  "city : "+ req.body.result.parameters['geo-city']); 
+       
        // Parse the request body from the POST
        let body = req.body;
        console.log(body);
