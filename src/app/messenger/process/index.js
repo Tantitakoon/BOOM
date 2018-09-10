@@ -220,25 +220,28 @@ var process = exports.process = function (_Intent) {
                         if(objText['url']!=""){
                         this.rich["BasicCard"] = Rich["BasicCard"](this.data.sender_psid,objText['txt'],objText['url']);
                         let serviceResponse =  new _services.responseMessenger(this.app);
-                        //serviceResponse.callSendAPI('/messages', this.rich.MessengerBasic, () => {});
-
                         serviceResponse.callSendAPI('/messages',this.rich.BasicCard, () => {});
                         }
                         else{
-                            this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
-                            let serviceResponse =  new _services.responseMessenger(this.app);
-                            //serviceResponse.callSendAPI('/messages', this.rich.MessengerBasic, () => {});
-
-                            serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
+                             console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe");
+                          //  this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
+                           // let serviceResponse =  new _services.responseMessenger(this.app);
+                           // serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
+                          var a = {
+                                "recipient":{
+                                    "id":this.data.sender_psid
+                                },
+                                "message":{
+                                    "text":"Please share your location:",
+                                    "quick_replies":[
+                                    {
+                                        "content_type":"location",
+                                    }
+                                    ]
+                                }}
+                                serviceResponse.callSendAPI('/messages',a, () => {});
                         }
-                              // conv.ask(objText['txt']);
-                             /* console.log(objText['txt']);
-                                if(objText['url']!==''){
-                                    // this.rich["AISPlayTutorialButtonsBasicCard"] = Rich["AISPlayTutorialButtonsBasicCard"](objText);
-                                   //  conv.ask(this.rich.AISPlayTutorialButtonsBasicCard);
-
-                                 }*/
-
+                              
                 }
             else{
 

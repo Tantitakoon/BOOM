@@ -41,6 +41,7 @@ var Intent = exports.Intent = function () {
         this.params = null;
         this.value = null;
         this.language = null;
+        this.user_token = null ;
 
         this.rich = {
             MessengerBasic:null,
@@ -165,7 +166,7 @@ var Intent = exports.Intent = function () {
             console.log('webhook_events.messaging');
             // iterate webhook events
             webhook_events.messaging.forEach(event => {
-              console.log("eventBooM : "+event);
+          
               // parse sender PSID and message
               const psid = event.sender.id;
               const message = event.message;
