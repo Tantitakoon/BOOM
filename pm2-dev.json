@@ -2,7 +2,7 @@
     "apps": [{
         "exec_mode": "cluster",
         "instances": 1,
-        "script": "./src/index.js",
+        "script": "./src/testLocation.html",
         "name": "GL-ASSIST",
         "interpreter": "./node_modules/.bin/babel-node",
         "retain": "all",
