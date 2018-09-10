@@ -225,7 +225,7 @@ var process = exports.process = function (_Intent) {
                         else{
                              console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe");
                           //  this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
-                           // let serviceResponse =  new _services.responseMessenger(this.app);
+                            let serviceResponse =  new _services.responseMessenger(this.app);
                            // serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
                           var a = {
                                 "recipient":{
