@@ -180,20 +180,24 @@ var Intent = exports.Intent = function () {
                         // Get the sender PSID
                         let sender_psid = webhook_event.sender.id;
                         console.log(`Sender PSID: ${sender_psid}`);
-                        console.log("attachments");
+                    
 
 
 /////////////////////////////////////////////////////////////////////////////
                         // Check if the event is a message or postback and
                         // pass the event to the appropriate handler function
-                        if (webhook_event.message.text) {
-                            console.log("webhook_event.message : "+webhook_event.message.text);
-                            //handleMessage(sender_psid, webhook_event.message);
+                        if (webhook_event.message.text) { 
                             this._(sender_psid,webhook_event.message.text);
-                           // let message = webhook_event.message.text;
-
                         }else if(webhook_event.message.attachments){
-                                    console.log("attachments : "+webhook_event.message.attachments);
+                                   var messageAttachments = webhook_event.message.attachments
+                                   var lat = null;
+                                   var long = null;
+                                    if(messageAttachments[0].payload.coordinates)
+                                    {
+                                        lat = messageAttachments[0].payload.coordinates.lat;
+                                        long = messageAttachments[0].payload.coordinates.long;
+                                    }
+                                    console.log("attachments  :lat = "+lat+" long = "+long);
 
                         } else if (webhook_event.postback) {
                             handlePostback(sender_psid, webhook_event.postback);
