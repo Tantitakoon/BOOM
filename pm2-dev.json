@@ -16,7 +16,7 @@
             "NODE_ENV": "production",
            
             "APP_HOST": "0.0.0.0",
-            "APP_PORT": "3000",
+            "APP_PORT": "443",
             "USE_HTTPS": true,
             "SAVE_LOG": true,
             "LOG_ROTATE_TIME": 60,

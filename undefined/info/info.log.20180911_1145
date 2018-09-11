@@ -1,0 +1,28 @@
+TIMESTAMP|2018-09-11 11:47:00.368|ID|11204|IP|::ffff:127.0.0.1|REQUEST_ID|67867bb1-7d43-4d6e-aeef-7e4555c3a2dd|REQUEST_METHOD|GET|REQUEST_URI|/view|REQUEST_HEADERS|{"host":"localhost:5000","user-agent":"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-language":"en-US,en;q=0.5","accept-encoding":"gzip, deflate","connection":"keep-alive","upgrade-insecure-requests":"1"}|REQUEST_PARAMS|undefined|REQUEST_BODY|{}|RESPONSE_STATUS|500|RESPONSE_BODY|<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+|RESPONSE_TIME|5
+TIMESTAMP|2018-09-11 11:47:00.403|ID|11204|IP|::ffff:127.0.0.1|REQUEST_ID|077a5322-bdef-4146-baf6-7f0026e2af76|REQUEST_METHOD|GET|REQUEST_URI|/favicon.ico|REQUEST_HEADERS|{"host":"localhost:5000","user-agent":"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-language":"en-US,en;q=0.5","accept-encoding":"gzip, deflate","connection":"keep-alive"}|REQUEST_PARAMS|undefined|REQUEST_BODY|{}|RESPONSE_STATUS|404|RESPONSE_BODY|<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /favicon.ico</pre>
+</body>
+</html>
+|RESPONSE_TIME|2
+TIMESTAMP|2018-09-11 11:50:01.249|ID|5104|IP|::1|REQUEST_ID|c5fab5ba-d559-41b3-a8d6-40b0cb74181c|REQUEST_METHOD|GET|REQUEST_URI|/view|REQUEST_HEADERS|{"host":"localhost:5000","user-agent":"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-language":"en-US,en;q=0.5","accept-encoding":"gzip, deflate","connection":"keep-alive","upgrade-insecure-requests":"1"}|REQUEST_PARAMS|{}|REQUEST_BODY|{}|RESPONSE_STATUS|200|RESPONSE_BODY|<html>
+   
+     <body>
+          AAAAAAA 
+     </body>
+</html>|RESPONSE_TIME|6
