@@ -11,14 +11,14 @@
 <script>
 
 
-
+var text ='';
 var x = document.getElementById("demo");
 var position = {};
 var map;
 var service;
 var infowindow;
 getLocation();
-
+ 
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -31,11 +31,12 @@ function showPosition(position) {
     //console.log();
        this.position.lat = position.coords.latitude; 
        this.position.long =position.coords.longitude;
-      
-     x.innerHTML = "MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
+     this.text=this.text+"MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude+'<hr>';
-     initialize();
+    // x.innerHTML = "MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
+   // "<br>Longitude: " + position.coords.longitude+'<hr>';
     
+    initialize();
       
 }
 
@@ -64,10 +65,12 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
-       x.innerHTML =  x.innerHTML+'</br>'+place.name ;
+      this.text =this.text+'</br>'+place.name ;
+       //x.innerHTML =  x.innerHTML+'</br>'+place.name ;
        console.log(place);
       //createMarker(results[i]);
     }
+    x.innerHTML =this.text;
   }
 }
 </script>
