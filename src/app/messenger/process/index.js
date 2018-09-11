@@ -64,7 +64,7 @@ var process = exports.process = function (_Intent) {
             
              
             console.log('res start');
-            var intent = this.data.received_message.text;
+            var intent = this.data.received_message;
 
             let response = await new _services.handleMessage(intent).request();
             let responseData = response.data;

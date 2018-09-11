@@ -186,11 +186,14 @@ var Intent = exports.Intent = function () {
 /////////////////////////////////////////////////////////////////////////////
                         // Check if the event is a message or postback and
                         // pass the event to the appropriate handler function
-                        if (webhook_event.message) {
-                            console.log("webhook_event.message : "+webhook_event.message);
+                        if (webhook_event.message.text) {
+                            console.log("webhook_event.message : "+webhook_event.message.text);
                             //handleMessage(sender_psid, webhook_event.message);
-                            this._(sender_psid,webhook_event.message);
+                            this._(sender_psid,webhook_event.message.text);
                            // let message = webhook_event.message.text;
+
+                        }else if(webhook_event.message.attachments){
+                                    console.log("attachments : "+webhook_event.message.attachments);
 
                         } else if (webhook_event.postback) {
                             handlePostback(sender_psid, webhook_event.postback);
