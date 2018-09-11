@@ -223,23 +223,11 @@ var process = exports.process = function (_Intent) {
                         serviceResponse.callSendAPI('/messages',this.rich.BasicCard, () => {});
                         }
                         else{
-                             console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe");
-                          //  this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
+                           
+                            this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
                             let serviceResponse =  new _services.responseMessenger(this.app);
-                           // serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
-                          var a = {
-                                "recipient":{
-                                    "id":this.data.sender_psid
-                                },
-                                "message":{
-                                    "text":"Please share your location:",
-                                    "quick_replies":[
-                                    {
-                                        "content_type":"location",
-                                    }
-                                    ]
-                                }}
-                                serviceResponse.callSendAPI('/messages',a, () => {});
+                            serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
+                        
                         }
                               
                 }
