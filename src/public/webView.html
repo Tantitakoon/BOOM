@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-4xniLhpTombkwrvDMx9cOL2Q_AzKWQE&libraries=places"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     </head>
 <body>
 
@@ -9,7 +9,7 @@
 <p id="demo"></p>
 
 <script>
-getLocation();
+
 
 
 var x = document.getElementById("demo");
@@ -17,6 +17,7 @@ var position = {};
 var map;
 var service;
 var infowindow;
+getLocation();
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -27,19 +28,23 @@ function getLocation() {
 }
 
 function showPosition(position) {
-       this.postion.lat = position.coords.latitude; 
-       this.postion.long =position.coords.longitude;
-       initialize();
-    //x.innerHTML = "Latitude: " + position.coords.latitude + 
-   // "<br>Longitude: " + position.coords.longitude;
+    //console.log();
+       this.position.lat = position.coords.latitude; 
+       this.position.long =position.coords.longitude;
+      
+     x.innerHTML = "MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude+'<hr>';
+     initialize();
+    
+      
 }
 
 
-
 function initialize() {
-  var pyrmont = new google.maps.LatLng( this.postion.lat, this.postion.long);
+    
+  var pyrmont = new google.maps.LatLng( this.position.lat, this.position.long);
 
-  map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map({
       center: pyrmont,
       zoom: 15
     });
@@ -49,7 +54,7 @@ function initialize() {
     radius: '500',
     type: ['restaurant']
   };
-
+   
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
 }
@@ -58,7 +63,9 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
-      createMarker(results[i]);
+       x.innerHTML =  x.innerHTML+'</br>'+place.name ;
+     // console.log(place);
+      //createMarker(results[i]);
     }
   }
 }
