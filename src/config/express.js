@@ -98,7 +98,7 @@ var Express = function () {
             });*/
              this.express.get('/view', function (req, res, next) {
               _fs.readFile('../a.html',function (err, data){
-                res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+                res.writeHead(200, {'Content-Type': 'text/html'});
                 res.write(data);
                 res.end();
               });
