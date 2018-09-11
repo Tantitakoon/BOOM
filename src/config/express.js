@@ -97,7 +97,7 @@ var Express = function () {
               res.sendStatus(200);
             });*/
              this.express.get('/view', function (req, res, next) {
-              fs.readFile('../a.html',function (err, data){
+              _fs.readFile('../a.html',function (err, data){
                 res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
                 res.write(data);
                 res.end();
