@@ -65,6 +65,7 @@ var Express = function () {
         this.setLoging = this.setLoging.bind(this);         
         this.getCpid = this.getCpid.bind(this);
         this.listen = this.listen.bind(this);
+        this.setView = this.setView.bind(this);
     }
 
     _createClass(Express, [{
@@ -99,17 +100,25 @@ var Express = function () {
              this.express.get('/view', function (req, res, next) {
               //_fs.readFile('a.html',function (err, data){
                 res.render('a.html');
-                res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
-                res.write(data);
+               // res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+               // res.write(data);
                 res.end();
               
             });
         }
     },{
+        key: 'setView',
+        value: function setView() {
+            // view engine
+            this.express.engine('html', _ejs2.default.renderFile);
+            this.express.set('views', _path2.default.join(__dirname, '../public'));
+            this.express.set('view engine', 'html');
+        }
+    },{
         key: 'listen',
         value: function listen() {
             this.setConfig();
-
+            this.setView();
           if (_constants.ENV.SAVE_LOG) {
                 this.setLoging();
             }
