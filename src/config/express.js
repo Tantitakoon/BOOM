@@ -93,7 +93,7 @@ var Express = function () {
             this.express.get('/CPID_URL', function (req, res, next) {
             let app = req.query.app;
               console.log("cpid");
-              res.send({ cpid: cpid });
+              //res.send({ cpid: cpid });
               res.sendStatus(200);
             });
            /* this.express.get('/view', function (req, res, next) {
