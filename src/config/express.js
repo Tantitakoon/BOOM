@@ -63,7 +63,7 @@ var Express = function () {
         this.express = (0, _express2.default)();
         this.setConfig = this.setConfig.bind(this);
         this.setLoging = this.setLoging.bind(this);         
-        this.getCpid = this.getCpid.bind(this);
+        this.messengerView = this.messengerView.bind(this);
         this.listen = this.listen.bind(this);
         this.setView = this.setView.bind(this);
     }
@@ -88,20 +88,10 @@ var Express = function () {
             this.express.use(this.logger.logResponse);
         }
     }, {
-        key: 'getCpid',
-        value: function getCpid() {
-            // route to dialogflow
-            /*this.express.get('/CPID_URL', function (req, res, next) {
-            let app = req.query.app;
-              console.log("cpid");
-              res.send({ cpid: cpid });
-              res.sendStatus(200);
-            });*/
-             this.express.get('/view', function (req, res, next) {
-              //_fs.readFile('a.html',function (err, data){
-                res.render('a.html');
-               // res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
-               // res.write(data);
+        key: 'messengerView',
+        value: function messengerView() {
+             this.express.get('/messengerView', function (req, res, next) {
+                res.render('webView.html');
                 res.end();
               
             });
@@ -109,7 +99,7 @@ var Express = function () {
     },{
         key: 'setView',
         value: function setView() {
-            // view engine
+            
             this.express.engine('html', _ejs2.default.renderFile);
             this.express.set('views', _path2.default.join(__dirname, '../public'));
             this.express.set('view engine', 'html');
@@ -124,8 +114,7 @@ var Express = function () {
             }
              new _messenger.process(this.express);
              new _controller.threadControl(this.express);
-            //new _messenger.ProcessOfMessenger();
-            this.getCpid();
+             this.messengerView();
         
             if (_constants.ENV.ENV === 'production' && _constants.ENV.USE_HTTPS === true) {
                // var privateKey = _fs2.default.readFileSync(_constants.ENV.SSL_KEY, 'utf8').toString();

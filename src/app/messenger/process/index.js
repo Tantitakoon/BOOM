@@ -223,10 +223,12 @@ var process = exports.process = function (_Intent) {
                         serviceResponse.callSendAPI('/messages',this.rich.BasicCard, () => {});
                         }
                         else{
-                           
+                            
                            // this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
                             //let serviceResponse =  new _services.responseMessenger(this.app);
                             //serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
+
+                            //===================================test===========================
                              let response = {
                                     attachment: {
                                         type: "template",
@@ -235,7 +237,7 @@ var process = exports.process = function (_Intent) {
                                             text: "OK, let's set your room preferences so I won't need to ask for them in the future.",
                                             buttons: [{
                                                 type: "web_url",
-                                                url: "https://chatbotboom.herokuapp.com/view",
+                                                url: "https://chatbotboom.herokuapp.com/messengerView",
                                                 title: "Set preferences",
                                                 webview_height_ratio: "compact",
                                                 messenger_extensions: false
