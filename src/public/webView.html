@@ -41,7 +41,7 @@ function showPosition(position) {
 
 
 function initialize() {
-    
+    console.log('initialize');
   var pyrmont = new google.maps.LatLng( this.position.lat, this.position.long);
 
   map = new google.maps.Map({
@@ -54,9 +54,10 @@ function initialize() {
     radius: '500',
     type: ['restaurant']
   };
-   
+    console.log('google.maps.places.PlacesService');
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+   console.log('nearbySearch');
 }
 
 function callback(results, status) {
