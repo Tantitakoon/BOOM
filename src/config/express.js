@@ -108,7 +108,7 @@ var Express = function () {
              new _messenger.process(this.express);
              new _controller.threadControl(this.express);
             //new _messenger.ProcessOfMessenger();
-         //   this.getCpid();
+            this.getCpid();
         
             if (_constants.ENV.ENV === 'production' && _constants.ENV.USE_HTTPS === true) {
                // var privateKey = _fs2.default.readFileSync(_constants.ENV.SSL_KEY, 'utf8').toString();
