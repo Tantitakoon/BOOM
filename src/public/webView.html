@@ -26,16 +26,18 @@ function getLocation() {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-
+fuction test(){
+    console.log('test');
+}
 function showPosition(position) {
-    //console.log();
+      console.log("showPosition");
        this.position.lat = position.coords.latitude; 
        this.position.long =position.coords.longitude;
-     this.text=this.text+"MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude+'<hr>';
+       this.text=this.text+"MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
+       "<br>Longitude: " + position.coords.longitude+'<hr>';
     // x.innerHTML = "MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
    // "<br>Longitude: " + position.coords.longitude+'<hr>';
-    
+    test();
     initialize();
       
 }
