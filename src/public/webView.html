@@ -61,8 +61,11 @@ function initialize() {
 }
 
 function callback(results, status) {
+    console.log("callback");
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+       console.log(" google.maps.places.PlacesServiceStatus");
     for (var i = 0; i < results.length; i++) {
+        console.log(" for");
       var place = results[i];
        x.innerHTML =  x.innerHTML+'</br>'+place.name ;
        console.log(place);
