@@ -187,6 +187,7 @@ var Intent = exports.Intent = function () {
                         // Check if the event is a message or postback and
                         // pass the event to the appropriate handler function
                         if (webhook_event.message) {
+                            console.log("webhook_event.message : "+webhook_event.message);
                             //handleMessage(sender_psid, webhook_event.message);
                             this._(sender_psid,webhook_event.message);
                            // let message = webhook_event.message.text;
