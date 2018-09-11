@@ -96,6 +96,13 @@ var Express = function () {
               res.send({ cpid: cpid });
               res.sendStatus(200);
             });
+           /* this.express.get('/view', function (req, res, next) {
+              fs.readFile('../a.html',function (err, data){
+                res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+                res.write(data);
+                res.end();
+              });
+            });*/
         }
     },{
         key: 'listen',
@@ -108,7 +115,7 @@ var Express = function () {
              new _messenger.process(this.express);
              new _controller.threadControl(this.express);
             //new _messenger.ProcessOfMessenger();
-         //   this.getCpid();
+            this.getCpid();
         
             if (_constants.ENV.ENV === 'production' && _constants.ENV.USE_HTTPS === true) {
                // var privateKey = _fs2.default.readFileSync(_constants.ENV.SSL_KEY, 'utf8').toString();
