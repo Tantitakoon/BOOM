@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+         
+        <!--script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script-->
+         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
     </head>
 <body>
 
@@ -26,9 +28,7 @@ function getLocation() {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-function test(){
-    console.log('test');
-}
+
 function showPosition(position) {
       console.log("showPosition");
        this.position.lat = position.coords.latitude; 
@@ -37,7 +37,7 @@ function showPosition(position) {
        "<br>Longitude: " + position.coords.longitude+'<hr>';
     // x.innerHTML = "MYLOCATION"+'</br>'+"Latitude: " + position.coords.latitude + 
    // "<br>Longitude: " + position.coords.longitude+'<hr>';
-    test();
+ 
     initialize();
       
 }
