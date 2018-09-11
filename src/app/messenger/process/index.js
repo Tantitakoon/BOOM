@@ -224,10 +224,37 @@ var process = exports.process = function (_Intent) {
                         }
                         else{
                            
-                            this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
-                            let serviceResponse =  new _services.responseMessenger(this.app);
-                            serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
-                        
+                           // this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
+                            //let serviceResponse =  new _services.responseMessenger(this.app);
+                            //serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
+                             let response = {
+                                    attachment: {
+                                        type: "template",
+                                        payload: {
+                                            template_type: "button",
+                                            text: "OK, let's set your room preferences so I won't need to ask for them in the future.",
+                                            buttons: [{
+                                                type: "web_url",
+                                                url: "https://blog.messengerdevelopers.com/using-the-webview-to-create-richer-bot-to-user-interactions-ed8a789523c6",
+                                                title: "Set preferences",
+                                                webview_height_ratio: "compact",
+                                                messenger_extensions: false
+                                            }]
+                                        }
+                                    }
+                                };
+
+
+                                 let request_body = {
+                                    "recipient": {
+                                        "id": this.data.sender_psid
+                                    },
+                                    "message": response
+                                    };
+
+                                    let serviceResponse =  new _services.responseMessenger(this.app);
+                                   serviceResponse.callSendAPI('/messages',request_body, () => {});
+                                                        
                         }
                               
                 }
