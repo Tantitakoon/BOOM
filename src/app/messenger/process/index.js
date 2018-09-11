@@ -227,21 +227,27 @@ var process = exports.process = function (_Intent) {
                            // this.rich["MessengerBasic"] = Rich["MessengerBasic"](objText['txt'],this.data.sender_psid);
                             //let serviceResponse =  new _services.responseMessenger(this.app);
                             //serviceResponse.callSendAPI('/messages',this.rich.MessengerBasic, () => {});
-                             let response = {
-                                    attachment: {
-                                        type: "template",
-                                        payload: {
-                                            template_type: "button",
-                                            text: "OK, let's set your room preferences so I won't need to ask for them in the future.",
-                                            buttons: [{
-                                                type: "web_url",
-                                                url: "https://blog.messengerdevelopers.com/using-the-webview-to-create-richer-bot-to-user-interactions-ed8a789523c6",
-                                                title: "Set preferences",
-                                                webview_height_ratio: "compact",
-                                                messenger_extensions: false
-                                            }]
-                                        }
+                            let response = {
+                                "attachment":{
+                                    "type":"template",
+                                    "payload":{
+                                    "template_type":"generic",
+                                    "elements": [{
+                                        "title":"I took Peter's 'Which Hat Are You?' Quiz",
+                                        "image_url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.iphone-droid.net%2Fwp-content%2Fuploads%2F2012%2F11%2Faunjai.jpg&imgrefurl=https%3A%2F%2Fwww.iphone-droid.net%2Fspecial-day-get-now-free-ais-aunjai-and-myappsmall%2F&docid=2qdfXfbo5WyXfM&tbnid=Efex9KjGBpgPXM%3A&vet=10ahUKEwjI3O2zhLLdAhUGp48KHZ5bB8wQMwg4KAAwAA..i&w=196&h=196&client=firefox-b-ab&bih=591&biw=1366&q=aunjai&ved=0ahUKEwjI3O2zhLLdAhUGp48KHZ5bB8wQMwg4KAAwAA&iact=mrc&uact=8",
+                                        "subtitle": "My result: Fez",
+                                        "default_action":{
+                                        "type":"web_url",
+                                        "url": "https://chatbotboom.herokuapp.com/a.html"
+                                        },
+                                        "buttons":[{
+                                        "type":"web_url",
+                                        "url":"https://chatbotboom.herokuapp.com/a.html",
+                                        "title":"Take the Quiz"
+                                        }]
+                                    }]
                                     }
+                                }
                                 };
 
 
