@@ -239,7 +239,7 @@ var process = exports.process = function (_Intent) {
                                                 type: "web_url",
                                                 url: "https://chatbotboom.herokuapp.com/messengerView",
                                                 title: "Set preferences",
-                                                webview_height_ratio: "compact",
+                                                webview_height_ratio: "tall",
                                                 messenger_extensions: false
                                             }]
                                         }
